@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Book form</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}" media="all"/>
+</head>
+<body>
+
+<form th:action="@{/book/add}" th:object="${book}" method="post">
+
+    <input type="hidden" th:field="${book.id}" th:value="${book.id}" />
+    <div>
+        <label for="title">Title:</label><br/>
+        <input th:field="${book.title}"
+               type="text"
+               id="title"
+               name="title"
+               th:class="${#fields.hasErrors('title') ? 'error' : ''}"
+        />
+        <p th:class="${#fields.hasErrors('title') ? 'error-text' : ''}"
+           th:if="${#fields.hasErrors('title')}"
+           th:errors="${book.title}" ></p>
+    </div>
+
+    <div>
+        <label for="author">Author:</label><br/>
+        <input th:field="${book.author}"
+               type="text"
+               id="author"
+               name="author"
+               th:class="${#fields.hasErrors('author') ? 'error' : ''}"
+        />
+        <p th:class="${#fields.hasErrors('author') ? 'error-text' : ''}"
+           th:if="${#fields.hasErrors('author')}"
+           th:errors="${book.author}" ></p>
+    </div>
+
+    <div>
+        <label for="price">Price:</label><br/>
+        <input th:field="${book.price}"
+               type="number"
+               id="price"
+               name="price"
+               th:class="${#fields.hasErrors('price') ? 'error' : ''}"
+        />
+        <p th:class="${#fields.hasErrors('price') ? 'error-text' : ''}"
+           th:if="${#fields.hasErrors('price')}"
+           th:errors="${book.price}" ></p>
+    </div>
+
+    <div>
+        <input type="submit" name="submit" value="Add" />
+    </div>
+
+
+</form>
+
+</body>
+</html>

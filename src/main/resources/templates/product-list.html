@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Products list</title>
+</head>
+<body>
+
+<p>Products list</p>
+
+<table border="1" bordercolor="black" background="#d4d9df">
+    <tr>
+        <th>ID</th>
+        <th>Product name  </th>
+        <th>Description</th>
+    </tr>
+    <tr th:each="p : ${list2}">
+        <td th:text="${p.id}">ID</td>
+        <td th:text="${p.name}">Product name</td>
+        <td th:text="${p.description}">Description</td>
+    </tr>
+</table>
+<br/><br/><br/><br/>
+<a th:href="@{/product/add}">Add new</a>
+
+</body>
+</html>

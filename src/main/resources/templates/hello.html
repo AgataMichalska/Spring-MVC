@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www/thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Hello</title>
+</head>
+<body>
+    Cześć! <span th:text="${user.name}">Imie</span>
+     <span th:text="${user.surname}">Nazwisko</span>
+    <br /><br /><br />
+
+    If name.length() > 5 ?
+    <span th:if="${isBiggerThan5 == true}">Yes </span>
+    <span th:if="${isBiggerThan5 == false}">No </span>
+
+    <br /><br /><br />
+Wygenerowano: <span th:text="${generated}">Data</span>
+</body>
+</html>

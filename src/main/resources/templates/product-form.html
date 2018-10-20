@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Product form</title>
+</head>
+<body>
+
+<form th:action="@{/product/add}" th:object="${product}" method="post">
+
+    <div>
+        <label for="name">Product name:</label><br/>
+        <input th:field="${product.name}" type="text" id="name" name="name"/>
+    </div>
+    <br/>
+    <div>
+        <label for="description">Product description:</label><br/>
+        <textarea th:field="${product.description}" rows="10" id="description" name="text"></textarea>
+    </div>
+    <br/><br/>
+    <div>
+        <input type="submit" name="add" value="Add product"/>
+    </div>
+    <br/><br/>
+    <input type="text" name="szukam" />
+    <br/><br/>
+    <input type="submit" value="Search" />
+
+    <div class="row">
+        <div>
+            ${search}
+        </div>
+    </div>
+</form>
+
+
+</body>
+</html>

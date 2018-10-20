@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Book details</title>
+</head>
+<body>
+
+<h1> Details of book</h1>
+<h1 th:text="${book.title}">Title</h1>
+
+Written by: <p th:text="${book.author}"></p>
+Price <span th:text="${book.price}"> PLN</span>
+
+</body>
+</html>

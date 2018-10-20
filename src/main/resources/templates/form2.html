@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Hello Thymeleaf</title>
+</head>
+<body>
+
+<p>Hello Thymeleaf</p>
+<ul>
+    <li th:each="b : ${list}">
+        <span th:text="${b.title}">Title</span>
+        <span th:text="${b.text}">Text</span>
+        <span th:text="${b.tags}">Tags</span>
+    </li>
+</ul>
+
+</body>
+</html>
